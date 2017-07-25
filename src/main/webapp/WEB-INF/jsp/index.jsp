@@ -102,7 +102,7 @@
 				"menuid" : "51",
 				"menuname" : "就业情况",
 				"icon" : "icon-nav",
-				"url" : "html/dept/listDept.html"
+				"url" : "html_job_listjob.do"
 			} ]
 		}, {
 			"menuid" : "6",
