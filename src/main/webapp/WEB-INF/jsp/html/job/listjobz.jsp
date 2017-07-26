@@ -39,55 +39,6 @@ $(function(){
 			}
 		})
 	})
-	//获取所有的部门
-	$.ajax({
-		url:'jobz/list.do',
-		data:{rows:100},
-		success:function(data){
-			if(data.rows){
-				//清空append中的option
-				$("#idept").empty();
-				//data.rows数组 $(data.rows)标称jquery对象 jquery的方式迭代
-				$(data.rows).each(function(){
-					//this z指的是 rows里面每一条数据
-					$("#idept").append('<option value='+this.id+'>'+this.deptName+'</option>')
-				})
-				//默认选择第一个的时候初始化第一个部门的职位选择框
-				$.ajax({
-					url:'jobz/getPositionByDept.do',
-					data:{deptId:data.rows[0].id},
-					success:function(data){
-						$("#iposition").empty();
-						//data.rows数组 $(data.rows)标称jquery对象 jquery的方式迭代
-						$(data.rows).each(function(){
-							//this z指的是 rows里面每一条数据
-							$("#iposition").append('<option value='+this.id+'>'+this.positionName+'</option>')
-						})
-					}
-				})
-			}
-			
-		}
-	})
-	
-	//当你改变部门的时候 职位也应该想改的改变 改变部门出发了select标签change事件
-	$("#idept").change(function(){
-		//获取最新的select值 选中的部门的id
-		var deptid = $("#idept").val();
-		$.ajax({
-			url:'position/getPositionByDept.do',
-			data:{deptId:deptid},
-			success:function(data){
-				$("#iposition").empty();
-				//data.rows数组 $(data.rows)标称jquery对象 jquery的方式迭代
-				$(data.rows).each(function(){
-					//this z指的是 rows里面每一条数据
-					$("#iposition").append('<option value='+this.id+'>'+this.positionName+'</option>')
-				})
-			}
-		})
-	})
-	
 	//初始化 表格
 	$("#dg").datagrid({
 			url:'jobz/list.do',  
@@ -220,7 +171,7 @@ $(function(){
 	});
 	
 	$("#addstaff").dialog({
-	    title: '增加员工',    
+	    title: '增加就业信息',    
 	    closed: true,    
 	    cache: false,    
 	    modal: true   
