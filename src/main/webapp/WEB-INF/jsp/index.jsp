@@ -102,7 +102,7 @@
 				"menuid" : "51",
 				"menuname" : "就业情况",
 				"icon" : "icon-nav",
-				"url" : "html_job_listjob.do"
+				"url" : "html_job_listjobz.do"
 			} ]
 		}, {
 			"menuid" : "6",
@@ -122,7 +122,7 @@
 				"menuid" : "63",
 				"menuname" : "员工管理",
 				"icon" : "icon-nav",
-				"url" : "html/staff/listStaff.html"
+				"url" : "html_hr_liststaff.do"
 			} ]
 		} ]
 	};
