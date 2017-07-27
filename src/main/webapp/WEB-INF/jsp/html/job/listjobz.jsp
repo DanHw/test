@@ -51,7 +51,7 @@ $(function(){
 		        {field:'tel',title:'电话',width:100},    
 		        {field:'clazz',title:'班级',width:100},    
 		        {field:'company',title:'就业公司',width:100},    
-		        {field:'jtime',title:'入职日期',width:100},
+		        {field:'jtimeStr',title:'入职日期',width:100},
 		        {field:'station',title:'岗位',width:100},
 		        {field:'sal',title:'工资',width:100},
 		    ]],
@@ -78,7 +78,7 @@ $(function(){
 								var icompany = $("#icompany").val();
 								var ijtime = $("#ijtime").datebox('getValue');
 								var istation = $("#istation").val();
-								var isal = $("#sal").val();
+								var isal = $("#isal").val();
 								$.ajax({
 									url:'jobz/add.do',
 									data:{studentName:istudentName,qq:iqq,tel:itel,clazz:iclazz,company:icompany,jtime:ijtime,station:istation,sal:isal},
@@ -112,7 +112,7 @@ $(function(){
 								$("#icompany").val(row.company);
 								$("#ijtime").val(row.jtime);
 								$("#istation").val(row.station);
-								$("#sal").val(row.sal);
+								$("#isal").val(row.sal);
 								$("#isave").click(function(){
 									var istudentName = $("#istudentName").val();
 									var iqq = $("#iqq").val();
@@ -121,7 +121,7 @@ $(function(){
 									var icompany = $("#icompany").val();
 									var ijtime = $("#ijtime").datebox('getValue');
 									var istation = $("#istation").val();
-									var isal = $("#sal").val();
+									var isal = $("#isal").val();
 									if(isave){
 										$.ajax({
 											//修改部门的接口
