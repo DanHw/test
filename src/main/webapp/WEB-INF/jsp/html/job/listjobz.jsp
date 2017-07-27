@@ -35,7 +35,7 @@ $(function(){
 		var studentName = $("#qstudentName").val();
 		$("#dg").datagrid({
 			queryParams: {
-				studentName:studentName
+				studentname:studentName
 			}
 		})
 	})
