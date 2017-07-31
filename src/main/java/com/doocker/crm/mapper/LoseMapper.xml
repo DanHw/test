@@ -317,6 +317,7 @@
   </update>
    <select id="selectByPage" resultType="java.util.HashMap">
   SELECT
+  	student.id id,
 	sname,
 	qq,
 	tel,
@@ -328,8 +329,8 @@
 FROM
 	student
 JOIN lose ON student.id = lose.student_id
-	<if test="bywho !=null and bywho !=''">
-     WHERE bywho LIKE #{bywho}
+	<if test="sname !=null and sname !=''">
+     WHERE sname LIKE #{sname}
 	   
 	</if>
   </select>

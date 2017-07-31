@@ -2,6 +2,9 @@ package com.doocker.crm.mapper;
 
 import com.doocker.crm.po.Clazzchange;
 import com.doocker.crm.po.ClazzchangeExample;
+import com.doocker.crm.po.Lose;
+
+import java.util.HashMap;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
@@ -93,4 +96,6 @@ public interface ClazzchangeMapper {
      * @mbggenerated Thu Jul 27 23:53:50 CST 2017
      */
     int updateByPrimaryKey(Clazzchange record);
+   
+    List<HashMap> selectByPage(@Param("sname")String sname);
 }

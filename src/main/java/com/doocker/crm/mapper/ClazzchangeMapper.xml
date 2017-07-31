@@ -315,4 +315,23 @@
       student_id = #{studentId,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+   <select id="selectByPage" resultType="java.util.HashMap">
+ SELECT
+    student.id id,
+	sname,
+	qq,
+	tel,
+	updown,
+	cbefore,
+	cafter,
+	bytime,
+	bywho
+FROM
+	student
+JOIN clazzchange ON student.id = clazzchange.student_id
+	<if test="sname !=null and sname !=''">
+     WHERE sname LIKE #{sname}
+	   
+	</if>
+  </select>
 </mapper>

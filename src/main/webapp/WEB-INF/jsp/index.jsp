@@ -67,17 +67,17 @@
 				"menuid" : "31",
 				"menuname" : "在校学生管理",
 				"icon" : "icon-nav",
-				"url" : "html/role/listRole.html"
+				"url" : "html_faculty_liststudent.do"
 			}, {
 				"menuid" : "32",
 				"menuname" : "学生升/留级",
 				"icon" : "icon-nav",
-				"url" : "html/role/listRolePri.html"
+				"url" : "html_faculty_listclazzchange.do"
 			}, {
 				"menuid" : "33",
 				"menuname" : "学生流失情况",
 				"icon" : "icon-nav",
-				"url" : "html/privilege/listPrivilege.html"
+				"url" : "html_faculty_listlose.do"
 			}, ]
 		}, {
 			"menuid" : "4",

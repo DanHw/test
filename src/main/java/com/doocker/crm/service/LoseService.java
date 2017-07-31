@@ -11,9 +11,9 @@ public interface LoseService {
 	Integer deleteLose(Integer id);
 	Integer insertLose(Lose lose);
 	Lose getLose(Integer id);
-	PageInfo<HashMap> selectListByPage(String loseName, Integer page, Integer rows);
+	PageInfo<HashMap> selectListByPage(String sname, Integer page, Integer rows);
 	Integer deleteById(Integer id);
 	Integer add(Lose lose);
-	List<Lose> getLoseByDeptId(Integer deptId);
+	
 
 }

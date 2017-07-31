@@ -362,4 +362,34 @@
       entry = #{entry,jdbcType=DATE}
     where id = #{id,jdbcType=INTEGER}
   </update>
+   <select id="selectByPage" resultType="java.util.HashMap">
+  SELECT
+	*
+FROM
+	(
+		SELECT
+			student.id id,
+			sname,
+			entry,
+			clazz,
+			qq,
+			tel,
+			pay,
+			statu,
+			losetime
+		FROM
+			student
+		JOIN lose ON student.id = lose.student_id
+	) t1,
+	(
+		SELECT
+			updown
+		FROM
+			clazzchange
+	) t2
+<if test="sname !=null and sname !=''">
+     WHERE sname LIKE #{sname}
+	   
+	</if>
+  </select>
 </mapper>

@@ -95,6 +95,6 @@ public interface LoseMapper {
      * @mbggenerated Thu Jul 27 23:53:50 CST 2017
      */
     int updateByPrimaryKey(Lose record);
-    List<HashMap> selectByPage(@Param("bywho")String sname);
+    List<HashMap> selectByPage(@Param("sname")String sname);
 
 }

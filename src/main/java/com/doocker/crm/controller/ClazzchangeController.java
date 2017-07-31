@@ -10,32 +10,32 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.doocker.crm.controller.common.EasyuiResult;
-import com.doocker.crm.po.Lose;
-import com.doocker.crm.service.LoseService;
+import com.doocker.crm.po.Clazzchange;
+import com.doocker.crm.service.ClazzchangeService;
 import com.github.pagehelper.PageInfo;
 
 @Controller
-@RequestMapping("lose")
-public class LoseController {
+@RequestMapping("clazzchange")
+public class ClazzchangeController {
 	@Autowired
-	private LoseService loseService;
+	private ClazzchangeService clazzchangeService;
 	@RequestMapping("get")
-	//返回的lose转换为json
+	//返回的clazzchange转换为json
 	@ResponseBody
-	public Lose getLose(Integer id){
-		return loseService.getLose(id);
+	public Clazzchange getClazzchange(Integer id){
+		return clazzchangeService.getClazzchange(id);
 		
 	}
 	@RequestMapping("list")
 	@ResponseBody
-	public EasyuiResult listLose(
+	public EasyuiResult listClazzchange(
 			@RequestParam(value="sname",required=false)String sname,
 			@RequestParam(value="page",defaultValue="1")Integer page,
 			@RequestParam(value="rows",defaultValue="3")Integer rows
 			){
 		PageInfo<HashMap> list=new PageInfo<HashMap>();
 		try{
-			list=loseService.selectListByPage(sname,page,rows);
+			list=clazzchangeService.selectListByPage(sname,page,rows);
 		}catch(Exception e){e.printStackTrace();
 		return new EasyuiResult(0L,null,false,"server error");
 		}
@@ -43,18 +43,18 @@ public class LoseController {
 		
 	}
 
-	//getLoseByDeptId
+	//getClazzchangeByDeptId
 
 	/**
 	 * 
-	 * 根据id删除lose
+	 * 根据id删除clazzchange
 	 */
 	@RequestMapping("del")
 	@ResponseBody
 	public EasyuiResult delete(@RequestParam(value="id",required=true)Integer id){
 		Integer ids  = 0;
 		try {
-			ids = loseService.deleteById(id);
+			ids = clazzchangeService.deleteById(id);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new EasyuiResult(0L,null,false,"server error");
@@ -70,11 +70,11 @@ public class LoseController {
 	
 	@RequestMapping("add")
 	@ResponseBody
-	public EasyuiResult add(Lose lose){
-		lose.setId(null);
+	public EasyuiResult add(Clazzchange clazzchange){
+		clazzchange.setId(null);
 		Integer ids=0;
 		try {
-			ids = loseService.add(lose);
+			ids = clazzchangeService.add(clazzchange);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new EasyuiResult(0L,null,false,"server error");
@@ -88,10 +88,10 @@ public class LoseController {
 	 */
 	@RequestMapping("update")
 	@ResponseBody
-	public EasyuiResult update(Lose lose){
+	public EasyuiResult update(Clazzchange clazzchange){
 		Integer ids=0;
 		try {
-			ids = loseService.updateLose(lose);
+			ids = clazzchangeService.updateClazzchange(clazzchange);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return new EasyuiResult(0L,null,false,"server error");
